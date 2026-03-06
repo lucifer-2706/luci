@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text2Cinematic — Animated Video Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="panel input-panel">
+        <h1>Text2Cinematic</h1>
+        <p class="subtitle">Turn text into top-quality animated video clips in your browser.</p>
+
+        <label for="scriptInput">Text script</label>
+        <textarea id="scriptInput" rows="7" placeholder="Enter the text you want to animate..."></textarea>
+
+        <div class="grid">
+          <div>
+            <label for="themeSelect">Theme</label>
+            <select id="themeSelect">
+              <option value="neon">Neon Pulse</option>
+              <option value="sunset">Sunset Gold</option>
+              <option value="aurora">Aurora Ice</option>
+              <option value="mono">Monochrome Pro</option>
+            </select>
+          </div>
+          <div>
+            <label for="fontSelect">Typography</label>
+            <select id="fontSelect">
+              <option value="Inter, sans-serif">Inter</option>
+              <option value="'Poppins', sans-serif">Poppins</option>
+              <option value="'Georgia', serif">Georgia</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div>
+            <label for="duration">Duration (seconds)</label>
+            <input id="duration" type="number" min="3" max="30" value="10" />
+          </div>
+          <div>
+            <label for="fps">FPS</label>
+            <input id="fps" type="number" min="24" max="60" value="30" />
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="previewBtn">Live Preview</button>
+          <button id="renderBtn" class="primary">Render & Download WebM</button>
+        </div>
+
+        <p id="status" class="status">Ready.</p>
+      </section>
+
+      <section class="panel preview-panel">
+        <canvas id="previewCanvas" width="1280" height="720"></canvas>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
